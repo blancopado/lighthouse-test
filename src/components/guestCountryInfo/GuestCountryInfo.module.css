@@ -1,29 +1,26 @@
-.cardRowContainer {
+.guestCountryContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-	padding: 8px 12px;
-	gap: 3px;
+	justify-content: space-evenly;
+	padding: 0 16px;
 	font-size: 12px;
 	font-weight: 400;
-
 	border-top: 1px solid var(--color-primary-gray);
+	height: calc(var(--card-max-height) / 5);
 }
 
-.cardRowItem {
+.guestCountryItem {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
-	align-items: start;
 	width: 100%;
-	gap: 16px;
+	gap: 10px;
 }
 
-.cardRowItemHeaderContainer {
+.guestCountryItemHeaderContainer {
 	display: flex;
 	justify-content: space-between;
-	gap: 5px;
 	width: 289px;
 	color: var(--color-light-blue);
 
@@ -33,30 +30,24 @@
 	}
 }
 
-.cardRowItemProgressContainer {
+.guestCountryItemProgressContainer {
 	display: flex;
 	justify-content: space-between;
-	gap: 16px;
+	gap: 10px;
 }
 
-.cardRowItemProgress {
+.guestCountryItemProgress {
 	display: flex;
 	align-items: center;
 	width: 289px;
 }
 
-.cardRowLastYearText {
+.guestCountryLastYearText {
 	font-size: 10px;
 	color: var(--color-light-blue2);
 }
 
-.cardRowYearGrowthContainer {
-	display: flex;
-	justify-content: left;
-	flex: 1;
-}
-
-.cardRowYearGrowthText {
+.guestCountryYearGrowthText {
 	font-size: 12px;
 
 	display: flex;

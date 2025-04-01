@@ -17,11 +17,12 @@
 	--color-light-blue: #4e6477;
 	--color-light-blue2: #60778b;
 	--color-primary-gray: #e1e5ec;
+	--color-dark-gray: #5d5d5d;
 	--color-black: #341b1b;
 	--color-white: #ffffff;
 
 	/* border radius */
-	--border-radius: 4px;
+	--default-border-radius: 4px;
 }
 
 body {
@@ -32,19 +33,27 @@ body {
 	min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin: 0;
-}
-
 #root {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-dark-gray);
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #ecf0f1;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
 }

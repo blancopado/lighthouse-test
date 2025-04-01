@@ -15,21 +15,21 @@ const GuestCountryInfo = ({
 	growth,
 }: GuestCountryInfoProps) => {
 	return (
-		<div className={styles.cardRowContainer}>
-			<div className={styles.cardRowItem}>
-				<div className={styles.cardRowItemHeaderContainer}>
+		<div className={styles.guestCountryContainer}>
+			<div className={styles.guestCountryItem}>
+				<div className={styles.guestCountryItemHeaderContainer}>
 					<h4>{countryName}</h4>
 					<p>{value}</p>
 				</div>
-				<p className={styles.cardRowYearGrowthText}>{growth}</p>
+				<p className={styles.guestCountryYearGrowthText}>{growth}</p>
 			</div>
 
-			<div className={styles.cardRowItem}>
-				<div className={styles.cardRowItemProgressContainer}>
-					<div className={styles.cardRowItemProgress}>
+			<div className={styles.guestCountryItem}>
+				<div className={styles.guestCountryItemProgressContainer}>
+					<div className={styles.guestCountryItemProgress}>
 						<ProgressBar current={value} total={total} />
 					</div>
-					<p className={styles.cardRowLastYearText}>vs. Last year</p>
+					<p className={styles.guestCountryLastYearText}>vs. Last year</p>
 				</div>
 			</div>
 		</div>

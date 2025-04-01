@@ -1,5 +1,5 @@
 .card {
-	border-radius: var(--border-radius);
+	border-radius: var(--default-border-radius);
 	background-color: var(--color-white);
 	display: flex;
 	flex-direction: column;
@@ -9,7 +9,7 @@
 
 .header {
 	display: flex;
-	padding: 10px 12px;
+	padding: 12px 16px;
 }
 
 .title {
@@ -19,7 +19,11 @@
 	color: var(--color-dark-blue);
 }
 
+:root {
+	--card-max-height: 260px;
+}
+
 .content {
-	max-height: 265px;
-	overflow: scroll;
+	max-height: var(--card-max-height);
+	overflow-y: scroll;
 }
