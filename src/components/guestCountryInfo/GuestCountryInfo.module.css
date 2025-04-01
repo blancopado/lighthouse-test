@@ -1,0 +1,55 @@
+.guestCountryContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 0 16px;
+	font-size: 12px;
+	font-weight: 400;
+	border-top: 1px solid var(--color-primary-gray);
+	height: calc(var(--card-max-height) / 5);
+}
+
+.guestCountryItem {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	width: 100%;
+	gap: 10px;
+}
+
+.guestCountryItemHeaderContainer {
+	display: flex;
+	justify-content: space-between;
+	width: 289px;
+	color: var(--color-light-blue);
+
+	& h4,
+	p {
+		font-weight: 400;
+	}
+}
+
+.guestCountryItemProgressContainer {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.guestCountryItemProgress {
+	display: flex;
+	align-items: center;
+	width: 289px;
+}
+
+.guestCountryLastYearText {
+	font-size: 10px;
+	color: var(--color-light-blue2);
+}
+
+.guestCountryYearGrowthText {
+	font-size: 12px;
+
+	display: flex;
+	flex: 1;
+}

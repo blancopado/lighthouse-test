@@ -1,0 +1,29 @@
+.card {
+	border-radius: var(--default-border-radius);
+	background-color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	width: 394px;
+	border: 1px solid var(--color-primary-gray);
+}
+
+.header {
+	display: flex;
+	padding: 12px 16px;
+}
+
+.title {
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	color: var(--color-dark-blue);
+}
+
+:root {
+	--card-max-height: 260px;
+}
+
+.content {
+	max-height: var(--card-max-height);
+	overflow-y: scroll;
+}

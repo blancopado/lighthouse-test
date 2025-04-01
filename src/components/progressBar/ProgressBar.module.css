@@ -1,0 +1,12 @@
+.container {
+	width: 100%;
+	height: 8px;
+	background-color: var(--color-primary-gray);
+	border-radius: var(--default-border-radius);
+}
+
+.progress {
+	height: 100%;
+	background-color: var(--color-primary-blue);
+	transition: width 0.3s ease-in-out;
+}
