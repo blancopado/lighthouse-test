@@ -7,7 +7,7 @@
 	font-size: 12px;
 	font-weight: 400;
 	border-top: 1px solid var(--color-primary-gray);
-	height: calc(var(--card-max-height) / 5);
+	flex: 1 0 20%;
 }
 
 .guestCountryItem {
@@ -52,4 +52,16 @@
 
 	display: flex;
 	flex: 1;
+}
+
+.red {
+	color: var(--color-red);
+}
+
+.green {
+	color: var(--color-green);
+}
+
+.blue {
+	color: var(--color-light-blue);
 }

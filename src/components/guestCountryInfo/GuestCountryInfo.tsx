@@ -1,3 +1,5 @@
+import classnames from "classnames";
+import type { Growth } from "../../controllers/ProcessedGuestCountry";
 import ProgressBar from "../progressBar/ProgressBar";
 import styles from "./GuestCountryInfo.module.css";
 
@@ -5,7 +7,7 @@ interface GuestCountryInfoProps {
 	countryName: string;
 	value: number;
 	total: number;
-	growth: number;
+	growth: Growth;
 }
 
 const GuestCountryInfo = ({
@@ -21,7 +23,15 @@ const GuestCountryInfo = ({
 					<h4>{countryName}</h4>
 					<p>{value}</p>
 				</div>
-				<p className={styles.guestCountryYearGrowthText}>{growth}</p>
+				<p
+					className={classnames(
+						styles.guestCountryYearGrowthText,
+						styles[growth.color],
+					)}
+				>
+					<span>{growth.sign} </span>
+					{growth.absValue}
+				</p>
 			</div>
 
 			<div className={styles.guestCountryItem}>
