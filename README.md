@@ -2,6 +2,9 @@
 
 Stack: React + TypeScript + Vite
 
+Running the app: `npm run dev`
+
+
 I have added all required functionalities as described in the test document.
 
 
