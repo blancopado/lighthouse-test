@@ -19,11 +19,9 @@
 	color: var(--color-dark-blue);
 }
 
-:root {
-	--card-max-height: 260px;
-}
-
 .content {
-	max-height: var(--card-max-height);
+	display: flex;
+	flex-direction: column;
+	height: 260px;
 	overflow-y: scroll;
 }

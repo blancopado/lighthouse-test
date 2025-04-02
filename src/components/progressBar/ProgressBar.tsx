@@ -11,8 +11,6 @@ const ProgressBar = ({ current, total }: ProgressBarProps) => {
 	const percentage = (safeCurrent / safeTotal) * 100;
 	const isFullProgress = current >= total;
 
-	console.log(percentage);
-
 	return (
 		<div className={styles.container}>
 			<div

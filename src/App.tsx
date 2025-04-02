@@ -1,46 +1,44 @@
+import { useEffect, useState } from "react";
 import Card from "./components/card/Card";
 import GuestCountryInfo from "./components/guestCountryInfo/GuestCountryInfo";
+import type { ProcessedGuestCountry } from "./controller/ProcessedGuestCountry";
+import { useGuestCountry } from "./hooks/useGuestCountry";
 
 function App() {
+	const [guestsCountries, setGuestsCountries] =
+		useState<ProcessedGuestCountry[]>();
+	const { getAllGuestsCountries } = useGuestCountry();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchPets = async () => {
+			setIsLoading(true);
+
+			const guestsCountries = await getAllGuestsCountries();
+			setGuestsCountries(guestsCountries);
+
+			setIsLoading(false);
+		};
+
+		fetchPets();
+	}, [getAllGuestsCountries]);
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<div>
 			<Card title="Guest Country">
-				<GuestCountryInfo
-					countryName="Belgium"
-					value={676}
-					total={676}
-					growth={111}
-				/>
-				<GuestCountryInfo
-					countryName="Germany"
-					value={634}
-					total={700}
-					growth={91}
-				/>
-				<GuestCountryInfo
-					countryName="France"
-					value={451}
-					total={800}
-					growth={0}
-				/>
-				<GuestCountryInfo
-					countryName="Australia"
-					value={332}
-					total={700}
-					growth={-557}
-				/>
-				<GuestCountryInfo
-					countryName="United States of America"
-					value={230}
-					total={800}
-					growth={62}
-				/>
-				<GuestCountryInfo
-					countryName="Spain"
-					value={230}
-					total={800}
-					growth={62}
-				/>
+				{guestsCountries?.map((guestCountry) => (
+					<GuestCountryInfo
+						key={guestCountry.id}
+						countryName={guestCountry.countryName}
+						value={guestCountry.reservations}
+						total={guestCountry.total}
+						growth={guestCountry.growth}
+					/>
+				))}
 			</Card>
 		</div>
 	);
