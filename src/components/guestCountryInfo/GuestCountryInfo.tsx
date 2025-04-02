@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import type { Growth } from "../../controller/ProcessedGuestCountry";
+import type { Growth } from "../../controllers/ProcessedGuestCountry";
 import ProgressBar from "../progressBar/ProgressBar";
 import styles from "./GuestCountryInfo.module.css";
 

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 import HttpClient from "../client/HttpClient";
-import GuestCountryController from "../controller/GuestCountryController";
+import GuestCountryController from "../controllers/GuestCountryController";
 import GuestCountryHttpRepository from "../infrastructure/GuestCountryHttpRepository";
 
 export const useGuestCountry = () => {

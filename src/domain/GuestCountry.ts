@@ -1,4 +1,4 @@
-import type { CountryCode } from "../controller/countryMapping";
+import type { CountryCode } from "../controllers/countryMapping";
 import type { Id } from "../types/id";
 
 interface GuestCountry {
