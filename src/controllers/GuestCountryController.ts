@@ -19,33 +19,27 @@ class GuestCountryController {
 	}
 
 	private getGrowthInfo(guestCountry: GuestCountry): Growth {
-		const growth: Growth = {
-			sign: "+",
-			value: 0,
-			absValue: 0,
-			color: "blue",
-		};
-
 		const value =
 			guestCountry.value.nr_of_rooms - guestCountry.reference_value.nr_of_rooms;
 
-		if (
-			guestCountry.value.nr_of_rooms > guestCountry.reference_value.nr_of_rooms
-		) {
-			growth.sign = "+";
-			growth.value = value;
-			growth.absValue = value;
-			growth.color = "green";
-		} else if (
-			guestCountry.value.nr_of_rooms < guestCountry.reference_value.nr_of_rooms
-		) {
-			growth.sign = "-";
-			growth.value = value;
-			growth.absValue = Math.abs(value);
-			growth.color = "red";
+		if (value === 0) {
+			return {
+				sign: "+",
+				value: 0,
+				absValue: 0,
+				color: "blue",
+			};
 		}
 
-		return growth;
+		const currentReservationsGreaterThenReference =
+			guestCountry.value.nr_of_rooms > guestCountry.reference_value.nr_of_rooms;
+
+		return {
+			sign: currentReservationsGreaterThenReference ? "+" : "-",
+			value: value,
+			absValue: Math.abs(value),
+			color: currentReservationsGreaterThenReference ? "green" : "red",
+		};
 	}
 
 	private getMaxReservations(guestsCountries: GuestCountry[]): number {
@@ -82,11 +76,12 @@ class GuestCountryController {
 		guestsCountries: GuestCountry[],
 	): ProcessedGuestCountry[] {
 		const processedGuestsCountries = guestsCountries.map((guestCountry) => {
+			const total = this.getMaxReservations(guestsCountries);
 			return {
 				id: guestCountry.id,
 				countryName: this.getCountryName(guestCountry),
 				reservations: guestCountry.value.nr_of_rooms,
-				total: this.getMaxReservations(guestsCountries),
+				total,
 				growth: this.getGrowthInfo(guestCountry),
 			};
 		});
