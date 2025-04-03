@@ -12,3 +12,4 @@ Pull Requests:
 
 1. [PR1: basic styling](https://github.com/blancopado/lighthouse-test/pull/1)
 2. [PR2: all required functionalities and architecture](https://github.com/blancopado/lighthouse-test/pull/2)
+3. [PR3: small refactors](https://github.com/blancopado/lighthouse-test/pull/4)

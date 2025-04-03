@@ -31,14 +31,14 @@ class GuestCountryController {
 			};
 		}
 
-		const currentReservationsGreaterThenReference =
+		const currentReservationsGreaterThanReference =
 			guestCountry.value.nr_of_rooms > guestCountry.reference_value.nr_of_rooms;
 
 		return {
-			sign: currentReservationsGreaterThenReference ? "+" : "-",
+			sign: currentReservationsGreaterThanReference ? "+" : "-",
 			value: value,
 			absValue: Math.abs(value),
-			color: currentReservationsGreaterThenReference ? "green" : "red",
+			color: currentReservationsGreaterThanReference ? "green" : "red",
 		};
 	}
 
